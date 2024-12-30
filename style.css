@@ -56,6 +56,23 @@ p {
     background-clip: text;
 }
 
+ul {
+    list-style: disc;
+    list-style-position: inside;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+li {
+    font-family: 'Azeret Mono';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 1.2rem;
+    line-height: 180%;
+    color: #1c2120c2;
+}
+
 button {
     outline: none;
     border: none;
