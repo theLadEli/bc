@@ -11,6 +11,12 @@ body {
     min-height: 100vh;
     background: radial-gradient(85.76% 85.76% at 67.27% 26.44%, rgba(26, 129, 255, 0.2) 12.5%, rgba(26, 129, 255, 0) 57.34%), #F5F5F5;
     display: flex;
+    justify-content: center;
+}
+
+.container {
+    max-width: 600px !important;
+    display: flex;
     flex-direction: column;
     gap: 3rem;
 }
