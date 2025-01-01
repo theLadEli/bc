@@ -33,7 +33,8 @@ header {
     margin-bottom: 3rem;
 }
 
-h1 {
+h1,
+.typed-cursor {
     font-family: 'Azeret Mono';
     font-style: normal;
     font-weight: 700;
@@ -44,7 +45,8 @@ h1 {
     color: #1C2120;
 }
 
-h2, h3 {
+h2,
+h3 {
     font-family: 'Azeret Mono';
     font-style: normal;
     font-weight: 700;
@@ -58,7 +60,8 @@ h3 {
     font-size: 1.3rem;
 }
 
-p, .intro-text {
+p,
+.intro-text {
     font-family: 'Azeret Mono';
     font-style: normal;
     font-weight: 400;
@@ -83,7 +86,8 @@ ul {
     gap: 1rem;
 }
 
-li, li b {
+li,
+li b {
     font-family: 'Azeret Mono';
     font-style: normal;
     font-weight: 400;
@@ -148,4 +152,14 @@ footer {
     border-bottom: #1A81FF 1px solid;
     border-image: linear-gradient(280.78deg, #03CCFF 0%, #1E64FF 100%);
     border-image-slice: 1;
+}
+
+#typing-animation {
+    display: flex;
+    flex-direction: row;
+}
+
+.typed-cursor {
+    color: #1a81ff54;
+    text-shadow: 2px 2px 8px #1a81ff62;
 }
