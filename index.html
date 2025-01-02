@@ -130,11 +130,53 @@
 
     </div>
 
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
     <script>
-        var typed = new Typed('#typed', {
-        strings: ['👋 Hey, I\'m Eli'],
-        typeSpeed: 65,
+        class Typed {
+            constructor(el, options) {
+                this.el = typeof el === "string" ? document.querySelector(el) : el;
+                this.options = Object.assign({
+                        strings: [],
+                        typeSpeed: 65,
+                        showCursor: true,
+                        cursorChar: "|",
+                    },
+                    options
+                );
+                this.strings = this.options.strings;
+                this.typeSpeed = this.options.typeSpeed;
+                this.currentString = "";
+                this.currentIndex = 0;
+                this.charIndex = 0;
+                this.typingComplete = false;
+
+                if (this.options.showCursor) {
+                    this.cursor = document.createElement("span");
+                    this.cursor.className = "typed-cursor";
+                    this.cursor.textContent = this.options.cursorChar;
+                    this.el.parentNode.insertBefore(this.cursor, this.el.nextSibling);
+                }
+
+                this.type();
+            }
+
+            type() {
+                if (this.typingComplete) return;
+
+                const currentStr = this.strings[this.currentIndex];
+                if (this.charIndex < currentStr.length) {
+                    this.currentString += currentStr[this.charIndex];
+                    this.el.textContent = this.currentString;
+                    this.charIndex++;
+                    setTimeout(() => this.type(), this.typeSpeed);
+                } else {
+                    this.typingComplete = true;
+                }
+            }
+        }
+
+        new Typed("#typed", {
+            strings: ["👋 Hey, I'm Eli"],
+            typeSpeed: 85,
         });
     </script>
 </body>
